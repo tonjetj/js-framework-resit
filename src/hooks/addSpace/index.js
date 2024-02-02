@@ -7,3 +7,5 @@ function useProductTags({ product }) {
 
   return <div>{addSpaces(product.tags)}</div>;
 }
+
+export default useProductTags;

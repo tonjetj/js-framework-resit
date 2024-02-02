@@ -14,7 +14,6 @@ export const HeroContainer = styled.div`
 export const SalePhotoContainer = styled.div`
   width: 100%;
   min-height: 93vh;
-  background-color: #DAFF9E;
   border-right: 1px solid black;
   position: absolute; 
 `;
@@ -43,7 +42,6 @@ min-width: 40%;
 max-width: 40%;
 min-height: 100%;
 max-height: 350px; 
-background-color: #f2f2f2; 
 border-left: 1px solid black; 
 `
 

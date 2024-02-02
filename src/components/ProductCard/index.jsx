@@ -1,5 +1,5 @@
 import React from 'react';
-import useFetchProducts from '../../hooks/fetchDiscount/fetchProducts';
+import useFetchProducts from '../../hooks/fetchProducts';
 import useFetchDiscount from '../../hooks/fetchDiscount';
 import * as S from './index.styles';
 // import FavoriteIcon from '@mui/icons-material/Favorite';
@@ -46,7 +46,7 @@ function ProductCard() {
           </S.Linked>
           <div>
             <S.BottomContainer>
-              <S.Add>Add to cart</S.Add>
+              <button>Add to cart</button>
             </S.BottomContainer>
           </div>
         </S.Card>

@@ -1,19 +1,25 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import "./index.css";
+import { ThemeProvider } from "styled-components";
+import { GlobalStyles } from "./ui/global.styles";
+import theme from "./ui/theme";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
-import { ParallaxProvider } from "react-scroll-parallax";
+import store from "./store/store";
+import { Provider } from "react-redux";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <ParallaxProvider>
+    <ThemeProvider theme={theme}>
       <BrowserRouter>
-        <App />
+        <GlobalStyles />
+        <Provider store={store}>
+          <App />
+        </Provider>
       </BrowserRouter>
-    </ParallaxProvider>
+    </ThemeProvider>
   </React.StrictMode>
 );
 

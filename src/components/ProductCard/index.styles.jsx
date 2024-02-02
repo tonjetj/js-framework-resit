@@ -13,8 +13,7 @@ export const Card = styled.div`
 border: 1px solid #000; 
 max-width: 400px; 
 margin: 20px 15px; 
-background-color: #fafafa;
-box-shadow: rgba(0, 0, 0, 1) 5px 5px;
+background-color: ${(props) => props.theme.colors.white};
 `;
 
 export const Linked = styled(Link)`
@@ -38,36 +37,39 @@ padding: 0;
 `
 
 export const TitleContainer = styled.div`
-display: inline-flex; 
-margin: 0 auto; 
-padding: 0; 
-justify-content: evenly;
-min-width: 100%;   
-position: relative; 
-border-bottom: 1px solid black; 
-border-right: 1px solid black; 
+  display: inline-flex; 
+  margin: 0 auto; 
+  height: 32px; 
+  min-width: 100%;   
+  position: relative; 
+  align-items: center; 
+  border-bottom: 1px solid black; 
+  border-right: 1px solid black; 
+  border-top: 1px solid black; 
 `
 
 export const Title = styled.h3`
-padding: 5px 5px 10px 10px; 
-margin: 0;
-font-size: 16px;
-min-width: 100%; 
+  padding-left: 10px;
+  font-size: 14px;
+  width: 100%; 
+  height: 32px; 
+  object-fit: cover; 
+  background-color: pink; 
 `
 
 export const Sale = styled.p`
-position: absolute; 
-right: 0; 
-bottom: 0; 
-border-left: 1px solid black; 
-padding: 8px 10px 10px 10px; 
-margin: 0 auto; 
-background-color: #FFC83F; 
-font-size: 14px; 
-font-weight: 600; 
-`
+  position: absolute;
+  right: 0;
+  bottom: 0; 
+  height: 32px;  
+  padding: 0 10px;
+  border-left: 1px solid black;
+  margin: 0 auto;
+  background-color: ${(props) => props.theme.colors.sale};
+`;
 
-export const BottomContainer = styled(TitleContainer)`
+
+export const BottomContainer = styled.div`
 border-bottom: none; 
 border-top: 1px solid black; 
 min-width: 100%; 
@@ -75,22 +77,6 @@ justify-content: space-between;
 position: none; 
 `
 
-export const Add = styled.button`
-font-family: 'Inconsolata', monospace;
-background-color: #6FFF9B; 
-border: none; 
-color: black; 
-padding: 10px; 
-font-size: 15px; 
-font-weight: 600; 
-margin: 0; 
-width: 100%; 
-cursor: pointer; 
-&:hover {
-    background-color: #6FA3FF;
-    transition: 0.3s ease; 
-  }
-`
 
 export const CopyContainer = styled.div`
 display: inline-flex;

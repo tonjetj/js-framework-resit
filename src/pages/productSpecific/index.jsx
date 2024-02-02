@@ -1,8 +1,12 @@
-import React from 'react'
+import React from 'react';
+import Product from '../../components/Product';
+import { Container } from './index.styles';
 
 function ProductSpecific() {
   return (
-    <div>ProductSpecific</div>
+    <Container>
+      <Product/>
+    </Container>
   )
 }
 

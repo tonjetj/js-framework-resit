@@ -36,6 +36,6 @@ function Hero() {
       </S.DotContainer>
     </S.HeroContainer>
   )
-};
+}
 
 export default Hero;
