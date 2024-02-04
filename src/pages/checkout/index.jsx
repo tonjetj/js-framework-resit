@@ -1,9 +1,13 @@
-import React from 'react'
+import React from 'react';
+import Checkout from '../../components/Checkout/index';
+import { PageContainer } from './index.styles';
 
-function Checkout() {
+function CheckoutPage() {
   return (
-    <div>Checkout</div>
+    <PageContainer>
+      <Checkout/>
+    </PageContainer>
   )
 }
 
-export default Checkout;
+export default CheckoutPage;

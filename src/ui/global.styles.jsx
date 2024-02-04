@@ -13,7 +13,7 @@ export const GlobalStyles = createGlobalStyle`
         font-family: 'Montserrat', sans-serif;
     }
 
-    h1, h2, h3, h4, a {
+    h1, h2, h3, h4, a, input {
         font-family: 'Inconsolata', monospace;
     },
 
@@ -23,6 +23,13 @@ export const GlobalStyles = createGlobalStyle`
 
     p {
         font-size: 14px; 
+    }
+
+    ul, li {
+        text-decoration: none; 
+        list-style: none; 
+        margin: 0;
+        padding: 0;
     }
 
     button {

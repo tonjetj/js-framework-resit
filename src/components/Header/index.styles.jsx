@@ -19,3 +19,7 @@ display: flex;
 align-items: center; 
 background-color: #C785FF; 
 `
+
+export const SearchCartContainer = styled.div`
+display: inline-flex; 
+`

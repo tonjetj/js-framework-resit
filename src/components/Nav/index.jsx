@@ -6,7 +6,6 @@ function Nav() {
     <S.Nav>
                 <S.Links to="/">Home</S.Links>
                 <S.Links to="/contact">Contact</S.Links>
-                <S.Links to="/products">Products</S.Links>
     </S.Nav>
   )
 }

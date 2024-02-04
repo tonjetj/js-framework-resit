@@ -1,8 +1,12 @@
 import React from 'react'
+import ContactForm from '../../components/ContactForm';
+import { Container } from './index.styles';
 
 function Contact() {
   return (
-    <div>Contact</div>
+    <Container>
+      <ContactForm/>
+    </Container>
   )
 }
 

@@ -2,21 +2,25 @@ import React from 'react';
 import useFetchProducts from '../../hooks/fetchProducts';
 import useFetchDiscount from '../../hooks/fetchDiscount';
 import * as S from './index.styles';
-// import FavoriteIcon from '@mui/icons-material/Favorite';
-// import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
-// import { Rating } from '@mui/material';
+import { useDispatch } from 'react-redux';
+import { addToCart } from '../../store/cartSlice';
 
 
 function ProductCard() {
   const { products, loading, error } = useFetchProducts();
   const productsWithDiscount = useFetchDiscount(products);
+  const dispatch = useDispatch();
+
+  const handleAddToCart = (product) => {
+    dispatch(addToCart(product));
+  };
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <S.Container>Loading...</S.Container>;
   }
 
   if (error) {
-    return <div>Error: {error.message}</div>;
+    return <S.Container>Error: {error.message}</S.Container>;
   }
 
   return (
@@ -24,21 +28,26 @@ function ProductCard() {
       {productsWithDiscount.map((product) => (
         <S.Card key={product.id}>
           <S.Linked to={`/product/${product.id}`}>
+            <div>
             <S.CardImg src={product.imageUrl} loading="lazy" alt={product.title} />
-            <S.Copy>
-              <S.TitleContainer>
+            <S.TitleContainer>
                 <S.Title>{product.title}</S.Title>
                 {product.hasDiscount && <S.Sale>-{product.discount}%</S.Sale>}
               </S.TitleContainer>
+            </div>
+            <S.Copy>
               <div>
                 <S.CopyContainer>
-                {product.discountedPrice ? (
-                    <>
-                      <S.Prices isDiscounted={true}>{Math.floor(product.price)} kr</S.Prices>
-                      <S.Prices isDiscounted={false}>{Math.floor(product.discountedPrice)} kr</S.Prices>
-                    </>
+                  {product.discountedPrice && product.discountedPrice < product.price ? (
+                    <S.DescriptionContainer>
+                      <S.OldPrice>{Math.round(product.price)} kr</S.OldPrice>
+                      <S.NewPrice>{Math.round(product.discountedPrice)} kr</S.NewPrice>
+                    </S.DescriptionContainer>
                   ) : (
-                    <S.Prices isDiscounted={false}>{Math.floor(product.price)} kr</S.Prices>
+                    <S.DescriptionContainer>
+                      <S.Prices>{Math.round(product.price)} kr</S.Prices>
+                    </S.DescriptionContainer>
+                    
                   )}
                 </S.CopyContainer>
               </div>
@@ -46,7 +55,10 @@ function ProductCard() {
           </S.Linked>
           <div>
             <S.BottomContainer>
-              <button>Add to cart</button>
+              <S.Linked to={`/product/${product.id}`}>
+                <S.View>View </S.View>
+              </S.Linked>
+              <button onClick={() => handleAddToCart(product)}>Add to cart</button>
             </S.BottomContainer>
           </div>
         </S.Card>

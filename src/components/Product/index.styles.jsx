@@ -7,7 +7,15 @@ export const Wrapper = styled.div`
 export const Container = styled(Wrapper)`
     max-width: 1200px; 
     margin: 0 auto; 
-    border: 1px solid black; 
+`
+
+export const Breadcrumbs = styled.div`
+display: flex; 
+align-items: center; 
+`
+
+export const Product = styled.div`
+border: 1px solid black; 
 `
 
 export const ContentContainer = styled.div`
@@ -33,8 +41,10 @@ export const ProductImg = styled.img`
 `
 
 export const CopyContainer = styled.div`
-    display: flexbox; 
-    gap: 20px; 
+    display: flex; 
+    flex-direction: column; 
+    margin: 2rem auto; 
+    gap: 1rem; 
     padding: 0 30px 0 0; 
     min-width: 300px; 
     max-width: 300px; 
@@ -43,7 +53,17 @@ export const CopyContainer = styled.div`
 export const TagsContainer = styled.div`
     width: 100%; 
     display: flex; 
-    gap: 10px; 
+    gap: 0.5rem; 
+`
+
+export const ProductPrices = styled.div`
+    display: inline-flex;
+    gap: 2rem; 
+    width: 100%; 
+    & > p  {
+        font-size: 30px; 
+        font-family: 'Inconsolata', monospace;
+    }
 `
 
 export const Tags = styled.p`
@@ -66,10 +86,38 @@ export const Reviews = styled.h2`
     border-bottom: 1px solid black; 
     padding: 20px; 
     margin: 0; 
+    display: flex; 
+    justify-content: space-between; 
+    cursor: pointer; 
+`
+export const Review = styled.div`
+    padding: 0 1.5rem; 
+    border-bottom: 1px solid black; 
+`
+
+export const ReviewRating = styled.div`
+    display: inline-flex; 
+    align-items: center; 
+    padding: 0; 
+    margin: 0; 
+    gap: 1rem; 
+`
+export const ReviewDescription = styled.p`
+    padding-left: 2rem;
+    padding-bottom: 2rem;  
 `
 
 export const Add = styled.button`
     margin-top: 40px; 
     border: 1px solid black; 
     box-shadow: rgb(0,0,0,1) 2px 2px; 
+`
+
+
+export const OldPrice = styled.p`
+    text-decoration: line-through; 
+`
+
+export const NewPrice = styled.p`
+    font-weight: bold; 
 `

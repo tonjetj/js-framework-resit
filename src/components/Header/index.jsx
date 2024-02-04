@@ -1,6 +1,7 @@
 import React from 'react';
 import Nav from '../Nav';
-import Cart from '../Cart/index'
+import Cart from '../Cart';
+import Search from '../Search';
 import * as S from './index.styles';
 
 function Header() {
@@ -8,7 +9,10 @@ function Header() {
     <S.Header>
         <S.Logo>ESHOP</S.Logo>
         <Nav/>
-        <Cart/>
+        <S.SearchCartContainer>
+          <Search/>
+          <Cart/>
+        </S.SearchCartContainer>
     </S.Header>
   )
 }

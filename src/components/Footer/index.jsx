@@ -1,10 +1,9 @@
 import React from 'react'
+import { FooterContainer } from './index.styles';
 
 function Footer() {
   return (
-    <div>
-        <h3>Footer</h3>
-    </div>
+    <FooterContainer>&copy; 2023 Copyright: Tonje Jenssen.</FooterContainer>
   )
 }
 

@@ -4,6 +4,7 @@ const theme = {
     black: "#000",
     sale: "#FFC83F",
     white: "#fff",
+    warning: "#ff82a3",
   },
 
   button: {
